@@ -139,22 +139,22 @@ export interface EnvironmentConfig {
 // Utility function to get environment variables with defaults and validation
 function getEnvVar(key: string, defaultValue?: string, required: boolean = false): string {
   const value = import.meta.env[key] || defaultValue;
-  
+
   if (required && !value) {
     throw new Error(`Environment variable ${key} is required but not set`);
   }
-  
+
   return value || '';
 }
 
 function getEnvVarAsNumber(key: string, defaultValue: number, required: boolean = false): number {
   const value = getEnvVar(key, String(defaultValue), required);
   const parsed = parseInt(value, 10);
-  
+
   if (isNaN(parsed)) {
     throw new Error(`Environment variable ${key} must be a valid number`);
   }
-  
+
   return parsed;
 }
 
@@ -270,14 +270,13 @@ export const config: EnvironmentConfig = {
   },
 
   rateLimiting: {
-    // Use very high defaults (local preference) but allow env override
+    // High local defaults but env overridable
     requestsPerMinute: getEnvVarAsNumber('VITE_RATE_LIMIT_REQUESTS_PER_MINUTE', 1000000),
     requestsPerHour: getEnvVarAsNumber('VITE_RATE_LIMIT_REQUESTS_PER_HOUR', 10000000),
     requestsPerDay: getEnvVarAsNumber('VITE_RATE_LIMIT_REQUESTS_PER_DAY', 100000000),
   },
 
   development: {
-    // Keep permissive local defaults while supporting env overrides
     debugMode: getEnvVarAsBoolean('VITE_DEBUG_MODE', true),
     mockApi: getEnvVarAsBoolean('VITE_MOCK_API', false),
     enableAnalytics: getEnvVarAsBoolean('VITE_ENABLE_ANALYTICS', true),
@@ -285,7 +284,6 @@ export const config: EnvironmentConfig = {
   },
 
   security: {
-    // Allow all origins by default locally; env can restrict
     corsOrigins: getEnvVarAsArray('VITE_CORS_ORIGINS', ['*']),
     enableHttps: getEnvVarAsBoolean('VITE_ENABLE_HTTPS', true),
     sessionSecure: getEnvVarAsBoolean('VITE_SESSION_SECURE', true),

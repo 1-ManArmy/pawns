@@ -313,7 +313,7 @@ export function TutorialsPage() {
                   {openCategories.includes(cat) ? <CaretDown size={12} className="transition-transform" /> : <CaretRight size={12} className="transition-transform" />}
                   {cat}
                 </button>
-                <div className={`${openCategories.includes(cat) ? 'block' : 'hidden'} ml-2`}> 
+                <div className={`${openCategories.includes(cat) ? 'block' : 'hidden'} ml-2`}>
                   {grouped[cat] && grouped[cat].map(agent => (
                     <button
                       key={agent.key}
