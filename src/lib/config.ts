@@ -270,24 +270,27 @@ export const config: EnvironmentConfig = {
   },
 
   rateLimiting: {
-    requestsPerMinute: 1000000,
-    requestsPerHour: 10000000,
-    requestsPerDay: 100000000,
+    // Use very high defaults (local preference) but allow env override
+    requestsPerMinute: getEnvVarAsNumber('VITE_RATE_LIMIT_REQUESTS_PER_MINUTE', 1000000),
+    requestsPerHour: getEnvVarAsNumber('VITE_RATE_LIMIT_REQUESTS_PER_HOUR', 10000000),
+    requestsPerDay: getEnvVarAsNumber('VITE_RATE_LIMIT_REQUESTS_PER_DAY', 100000000),
   },
 
   development: {
-    debugMode: true,
-    mockApi: false,
-    enableAnalytics: true,
-    logLevel: 'debug',
+    // Keep permissive local defaults while supporting env overrides
+    debugMode: getEnvVarAsBoolean('VITE_DEBUG_MODE', true),
+    mockApi: getEnvVarAsBoolean('VITE_MOCK_API', false),
+    enableAnalytics: getEnvVarAsBoolean('VITE_ENABLE_ANALYTICS', true),
+    logLevel: getEnvVar('VITE_LOG_LEVEL', 'debug') as 'debug' | 'info' | 'warn' | 'error',
   },
 
   security: {
-    corsOrigins: ['*'],
-    enableHttps: true,
-    sessionSecure: true,
-    cookieSecure: true,
-    csrfProtection: true,
+    // Allow all origins by default locally; env can restrict
+    corsOrigins: getEnvVarAsArray('VITE_CORS_ORIGINS', ['*']),
+    enableHttps: getEnvVarAsBoolean('VITE_ENABLE_HTTPS', true),
+    sessionSecure: getEnvVarAsBoolean('VITE_SESSION_SECURE', true),
+    cookieSecure: getEnvVarAsBoolean('VITE_COOKIE_SECURE', true),
+    csrfProtection: getEnvVarAsBoolean('VITE_CSRF_PROTECTION', true),
   },
 };
 

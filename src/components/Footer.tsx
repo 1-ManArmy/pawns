@@ -5,15 +5,15 @@ import { siteConfig } from "@/config/site";
 export function Footer() {
   return (
     <footer className="relative bg-gradient-to-br from-gray-900 via-black to-gray-900 border-t border-gray-800/50 overflow-hidden">
-      {/* Modern Grid Background */}
-  <div className="absolute inset-0 opacity-5 bg-grid-static" />
+  {/* Modern Grid Background */}
+	<div className="absolute inset-0 opacity-5 bg-grid-static" />
       
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-purple-900/10 via-transparent to-transparent" />
       
       {/* Floating Elements */}
-      <div className="absolute top-8 right-20 w-32 h-32 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-2xl animate-pulse" />
-  <div className="absolute bottom-16 left-16 w-24 h-24 bg-gradient-to-r from-blue-500/10 to-green-500/10 rounded-full blur-xl animate-pulse anim-delay-2000" />
+  <div className="absolute top-8 right-20 w-32 h-32 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-2xl animate-pulse" />
+	<div className="absolute bottom-16 left-16 w-24 h-24 bg-gradient-to-r from-blue-500/10 to-green-500/10 rounded-full blur-xl animate-pulse anim-delay-2000" />
       
       <div className="relative max-w-7xl mx-auto px-6 py-16">
         {/* Newsletter Subscription */}

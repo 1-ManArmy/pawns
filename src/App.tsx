@@ -24,7 +24,7 @@ import {
   CareersPage,
   PartnersPage,
   SecurityPage,
-  PrivacyPage,
+    PrivacyPage,
     CookiePolicyPage,
     FAQPage,
   // Core Domain Pages
