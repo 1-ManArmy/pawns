@@ -270,21 +270,30 @@ export const config: EnvironmentConfig = {
   },
 
   rateLimiting: {
-    // High local defaults but env overridable
-    requestsPerMinute: getEnvVarAsNumber('VITE_RATE_LIMIT_REQUESTS_PER_MINUTE', 1000000),
-    requestsPerHour: getEnvVarAsNumber('VITE_RATE_LIMIT_REQUESTS_PER_HOUR', 10000000),
-    requestsPerDay: getEnvVarAsNumber('VITE_RATE_LIMIT_REQUESTS_PER_DAY', 100000000),
+    // Production‑safer defaults (override with env as needed)
+    // Keep generous but realistic ceilings; adjust via env in deployment
+    requestsPerMinute: getEnvVarAsNumber('VITE_RATE_LIMIT_REQUESTS_PER_MINUTE', 120),
+    requestsPerHour: getEnvVarAsNumber('VITE_RATE_LIMIT_REQUESTS_PER_HOUR', 3600),
+    requestsPerDay: getEnvVarAsNumber('VITE_RATE_LIMIT_REQUESTS_PER_DAY', 50000),
   },
 
   development: {
-    debugMode: getEnvVarAsBoolean('VITE_DEBUG_MODE', true),
+    // Default to debug only outside production
+    debugMode: getEnvVar('VITE_APP_ENVIRONMENT', 'development') === 'production'
+      ? getEnvVarAsBoolean('VITE_DEBUG_MODE', false)
+      : getEnvVarAsBoolean('VITE_DEBUG_MODE', true),
     mockApi: getEnvVarAsBoolean('VITE_MOCK_API', false),
     enableAnalytics: getEnvVarAsBoolean('VITE_ENABLE_ANALYTICS', true),
-    logLevel: getEnvVar('VITE_LOG_LEVEL', 'debug') as 'debug' | 'info' | 'warn' | 'error',
+    logLevel: (getEnvVar('VITE_APP_ENVIRONMENT', 'development') === 'production'
+      ? getEnvVar('VITE_LOG_LEVEL', 'info')
+      : getEnvVar('VITE_LOG_LEVEL', 'debug')) as 'debug' | 'info' | 'warn' | 'error',
   },
 
   security: {
-    corsOrigins: getEnvVarAsArray('VITE_CORS_ORIGINS', ['*']),
+    // Default: lock down origins in production, permissive in dev unless overridden
+    corsOrigins: getEnvVar('VITE_APP_ENVIRONMENT', 'development') === 'production'
+      ? getEnvVarAsArray('VITE_CORS_ORIGINS', ['https://your-production-domain.com'])
+      : getEnvVarAsArray('VITE_CORS_ORIGINS', ['http://localhost:5173']),
     enableHttps: getEnvVarAsBoolean('VITE_ENABLE_HTTPS', true),
     sessionSecure: getEnvVarAsBoolean('VITE_SESSION_SECURE', true),
     cookieSecure: getEnvVarAsBoolean('VITE_COOKIE_SECURE', true),
