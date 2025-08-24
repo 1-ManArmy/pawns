@@ -3,11 +3,11 @@ services:
   # Frontend Application
   onelastai-frontend:
     build:
-  context: .
-  dockerfile: Dockerfile
+      context: .
+      dockerfile: Dockerfile
     ports:
-  - "80:80"
-  - "443:443"
+      - "80:80"
+      - "443:443"
     environment:
       NODE_ENV: production
       VITE_APP_API_BASE_URL: http://localhost:3000/api
@@ -15,6 +15,7 @@ services:
       - ./ssl:/etc/nginx/ssl:ro
     depends_on:
       - redis
+      - onelastai-backend
     networks:
       - onelastai-network
     restart: unless-stopped
@@ -50,13 +51,13 @@ services:
   # Backend API (if needed)
   onelastai-backend:
     build:
-  context: ./backend
-  dockerfile: Dockerfile
+      context: ./backend
+      dockerfile: Dockerfile
     container_name: onelastai-backend
     env_file:
       - ./backend/.env
     environment:
-      - MONGODB_URI=${MONGODB_URI:-}
+      MONGODB_URI: ${MONGODB_URI:-}
     depends_on:
       - redis
     ports:
