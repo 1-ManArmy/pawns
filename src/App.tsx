@@ -22,6 +22,8 @@ import {
   PartnersPage,
   SecurityPage,
   PrivacyPage,
+    CookiePolicyPage,
+    FAQPage,
   // Core Domain Pages
   PrivacyPolicyPage,
   TermsConditionsPage,
@@ -106,6 +108,8 @@ function App() {
                         <Route path="/partners" element={<PartnersPage />} />
                         <Route path="/security" element={<SecurityPage />} />
                         <Route path="/privacy" element={<PrivacyPage />} />
+                        <Route path="/faq" element={<FAQPage />} />
+                        <Route path="/cookie-policy" element={<CookiePolicyPage />} />
                         
                         {/* Core Domain Pages */}
                         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />

@@ -18,6 +18,7 @@ export { CareersPage } from './CareersPage';
 export { PartnersPage } from './PartnersPage';
 export { SecurityPage } from './SecurityPage';
 export { PrivacyPage } from './PrivacyPage';
+export { default as CookiePolicyPage } from './CookiePolicyPage';
 
 // Core Domain Pages
 export { default as PrivacyPolicyPage } from './PrivacyPolicyPage';
@@ -34,6 +35,7 @@ export { default as SignUpPage } from './SignUpPage';
 export { default as ForgotPasswordPage } from './ForgotPasswordPage';
 export { default as ResetPasswordPage } from './ResetPasswordPage';
 export { default as SubscriptionPage } from './SubscriptionPage';
+export { default as FAQPage } from './FAQPage';
 
 // AI Service Pages
 export { default as ChatPage } from './ChatPage';

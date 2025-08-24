@@ -270,24 +270,24 @@ export const config: EnvironmentConfig = {
   },
 
   rateLimiting: {
-    requestsPerMinute: getEnvVarAsNumber('VITE_RATE_LIMIT_REQUESTS_PER_MINUTE', 100),
-    requestsPerHour: getEnvVarAsNumber('VITE_RATE_LIMIT_REQUESTS_PER_HOUR', 1000),
-    requestsPerDay: getEnvVarAsNumber('VITE_RATE_LIMIT_REQUESTS_PER_DAY', 10000),
+    requestsPerMinute: 1000000,
+    requestsPerHour: 10000000,
+    requestsPerDay: 100000000,
   },
 
   development: {
-    debugMode: getEnvVarAsBoolean('VITE_DEBUG_MODE', false),
-    mockApi: getEnvVarAsBoolean('VITE_MOCK_API', false),
-    enableAnalytics: getEnvVarAsBoolean('VITE_ENABLE_ANALYTICS', true),
-    logLevel: getEnvVar('VITE_LOG_LEVEL', 'info') as 'debug' | 'info' | 'warn' | 'error',
+    debugMode: true,
+    mockApi: false,
+    enableAnalytics: true,
+    logLevel: 'debug',
   },
 
   security: {
-    corsOrigins: getEnvVarAsArray('VITE_CORS_ORIGINS', ['http://localhost:5173']),
-    enableHttps: getEnvVarAsBoolean('VITE_ENABLE_HTTPS', false),
-    sessionSecure: getEnvVarAsBoolean('VITE_SESSION_SECURE', false),
-    cookieSecure: getEnvVarAsBoolean('VITE_COOKIE_SECURE', false),
-    csrfProtection: getEnvVarAsBoolean('VITE_CSRF_PROTECTION', true),
+    corsOrigins: ['*'],
+    enableHttps: true,
+    sessionSecure: true,
+    cookieSecure: true,
+    csrfProtection: true,
   },
 };
 
