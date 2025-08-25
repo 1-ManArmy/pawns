@@ -81,20 +81,16 @@ npm run docker:run
 ```
 
 ### 3.3 Production Deployment with Docker Compose
+Use the single `docker-compose.yml` (now unified) for all environments.
 ```bash
 # Copy environment file
 cp .env.production .env
 
-# Deploy to production
+# Deploy to production (detached)
 npm run docker:prod
 ```
 
-This will start:
-- Frontend application (onelastai.com)
-- MongoDB database
-- Redis cache
-- Nginx load balancer
-- Monitoring tools (Prometheus, Grafana)
+This will start the services defined in `docker-compose.yml` (frontend, backend, redis, optional nginx-lb). Enable or add monitoring in a separate stack if required.
 
 ## Step 4: Domain and SSL Setup
 

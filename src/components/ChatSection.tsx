@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
@@ -14,7 +14,6 @@ import {
   Image as ImageIcon,
   Stop
 } from "@phosphor-icons/react";
-import { useKV } from '@github/spark/hooks';
 
 interface Message {
   id: string;
@@ -29,14 +28,31 @@ interface Message {
 }
 
 export function ChatSection() {
-  const [messages, setMessages] = useKV<Message[]>("chat-messages", [
-    {
-      id: "1",
-      content: "Hello! I'm your AI assistant. How can I help you today?",
-      type: "ai",
-      timestamp: new Date()
-    }
-  ]);
+  // Simple localStorage persistence replacement for removed useKV
+  const storageKey = 'chat-messages';
+  const [messages, setMessages] = useState<Message[]>(() => {
+    try {
+      const raw = localStorage.getItem(storageKey);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        return parsed.map((m: any) => ({ ...m, timestamp: new Date(m.timestamp) }));
+      }
+    } catch {}
+    return [
+      {
+        id: "1",
+        content: "Hello! I'm your AI assistant. How can I help you today?",
+        type: "ai" as const,
+        timestamp: new Date()
+      }
+    ];
+  });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(messages));
+    } catch {}
+  }, [messages]);
   
   const [inputValue, setInputValue] = useState("");
   const [isRecording, setIsRecording] = useState(false);

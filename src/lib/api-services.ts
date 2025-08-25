@@ -532,19 +532,6 @@ export class MemoraAPI {
   }
 }
 
-// =============================================================================
-// EXPORT ALL SERVICES
-// =============================================================================
-
-export {
-  NeoChatAPI,
-  EmotiSenseAPI,
-  CineGenAPI,
-  VocaMindAPI,
-  NetScopeAPI,
-  MemoraAPI,
-};
-
 // Service health check utility
 export async function checkServiceHealth(): Promise<Record<string, boolean>> {
   const services = {

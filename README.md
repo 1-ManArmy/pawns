@@ -101,7 +101,6 @@ npm run docker:prod
 │   └── App.tsx             # Main app component
 ├── .env.example            # Environment template
 ├── docker-compose.yml      # Development containers
-├── docker-compose.prod.yml # Production containers
 ├── Dockerfile              # Production build
 ├── nginx.conf              # Web server configuration
 └── docs/                   # Documentation
@@ -117,7 +116,7 @@ For full functionality, configure these services:
 - MongoDB URI - Database storage
 - JWT Secret - Authentication security
 
-**Recommended (Enhanced Features)**  
+**Recommended (Enhanced Features)**
 - Google AI API Key - Gemini Pro integration
 - ElevenLabs API Key - Voice synthesis
 - Azure Speech Key - Voice processing
