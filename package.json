@@ -19,7 +19,7 @@
         "env:validate": "node scripts/validate-env.js",
         "docker:build": "docker build -t onelastai:latest .",
         "docker:run": "docker run -p 3000:80 onelastai:latest",
-    "docker:prod": "docker-compose up -d"
+        "docker:prod": "docker-compose up -d"
     },
     "dependencies": {
         "@heroicons/react": "^2.2.0",
@@ -68,6 +68,7 @@
         "marked": "^15.0.7",
         "next-themes": "^0.4.6",
         "octokit": "^4.1.2",
+        "phosphor-react": "^1.4.1",
         "react": "^19.1.1",
         "react-day-picker": "^9.6.7",
         "react-dom": "^19.0.0",

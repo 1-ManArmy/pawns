@@ -1,91 +1,38 @@
 ## Compose file (conflict resolved keeping local configuration)
 services:
+  # Backend API (if needed)
+  onelastai-backend:
+    build: ./backend
+    container_name: onelastai-backend
+    env_file:
+      - ./backend/.env
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+
   # Frontend Application
   onelastai-frontend:
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-      - "80:80"
-      - "443:443"
-    environment:
-      NODE_ENV: production
-      VITE_APP_API_BASE_URL: http://localhost:3000/api
-    volumes:
-      - ./ssl:/etc/nginx/ssl:ro
+      args:
+        VITE_APP_API_BASE_URL: http://onelastai-backend:3000
+    container_name: onelastai-frontend
     depends_on:
-      - redis
       - onelastai-backend
-    networks:
-      - onelastai-network
+    ports:
+      - "8080:80"
     restart: unless-stopped
-
-  # MongoDB Database
-  # Optional local MongoDB (disabled by default; uncomment if you need a local instance instead of Atlas)
-  # mongodb:
-  #   image: mongo:7
-  #   environment:
-  #     MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME}
-  #     MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
-  #     MONGO_INITDB_DATABASE: onelastai
-  #   volumes:
-  #     - mongodb_data:/data/db
-  #     - ./mongo-init:/docker-entrypoint-initdb.d:ro
-  #   ports:
-  #     - "27017:27017"
-  #   networks:
-  #     - onelastai-network
-  #   restart: unless-stopped
 
   # Redis Cache
   redis:
     image: redis:7-alpine
     container_name: redis
-    command: redis-server --requirepass ${REDIS_PASSWORD}
+    command: redis-server --requirepass ${REDIS_PASSWORD:-devredis123}
     ports:
       - "6379:6379"
-    networks:
-      - onelastai-network
     restart: unless-stopped
-
-  # Backend API (if needed)
-  onelastai-backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    container_name: onelastai-backend
-    env_file:
-      - ./backend/.env
-    environment:
-      MONGODB_URI: ${MONGODB_URI:-}
-    depends_on:
-      - redis
-    ports:
-      - "3000:3000"
-    networks:
-      - onelastai-network
-    restart: unless-stopped
-
-  # Nginx Load Balancer
-  nginx-lb:
-    image: nginx:alpine
-    volumes:
-      - ./nginx-lb.conf:/etc/nginx/nginx.conf:ro
-      - ./ssl:/etc/nginx/ssl:ro
-    ports:
-      - "8080:80"
-    depends_on:
-      - onelastai-frontend
-    networks:
-      - onelastai-network
-    restart: unless-stopped
-
-volumes:
-  # mongodb_data:
-  #   driver: local
-  redis_data:
-    driver: local
 
 networks:
-  onelastai-network:
-    driver: bridge
+  default:
+    name: onelastai-net
