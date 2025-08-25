@@ -11,9 +11,11 @@ RUN apk add --no-cache python3 make g++
 COPY package*.json ./
 
 # Ensure devDependencies are installed (do NOT set NODE_ENV=production here)
-RUN npm ci
+RUN npm install
 
-# Copy required source files
+# Copy config files needed by Tailwind/PostCSS
+COPY tailwind.config.* postcss.config.* ./
+# (If you have tsconfig files)
 COPY tsconfig*.json ./
 COPY vite.config.* ./
 COPY index.html ./
