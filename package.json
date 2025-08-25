@@ -1,4 +1,23 @@
 {
+  "name": "onelastai",
+  "private": true,
+  "version": "0.1.1",
+  "description": "OneLast AI monorepo (frontend + backend)",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev:frontend": "npm --workspace frontend run dev",
+    "dev:backend": "npm --workspace backend run dev || node ./backend/src/index.js",
+    "build:frontend": "npm --workspace frontend run build",
+    "type-check": "npm --workspace frontend run type-check",
+    "lint": "npm --workspace frontend run lint",
+    "test": "npm --workspace frontend run test",
+    "docker:prod": "docker-compose up -d --build"
+  }
+}
+{
     "name": "onelastai",
     "description": "OneLast AI platform frontend (React 19 + Vite + Tailwind)",
     "private": true,

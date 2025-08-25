@@ -13,7 +13,7 @@ services:
   # Frontend Application
   onelastai-frontend:
     build:
-      context: .
+      context: ./frontend
       dockerfile: Dockerfile
       args:
         VITE_APP_API_BASE_URL: http://onelastai-backend:3000
