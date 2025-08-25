@@ -1,0 +1,63 @@
+# Ignore VCS
+.git
+.gitignore
+
+# Trunk QA artifacts
+.trunk
+.trunk/**
+
+# Node modules (reinstalled in image)
+node_modules
+backend/node_modules
+
+# Env / secrets
+*.env
+.env.*
+
+# Builds / caches
+dist
+build
+coverage
+*.tsbuildinfo
+
+# Logs
+npm-debug.log
+yarn-error.log
+*.log
+
+# Misc
+Dockerfile.dev
+docker-compose.override.yml# Include any files or directories that you don't want to be copied to your
+# container here (e.g., local build artifacts, temporary files, etc.).
+#
+# For more help, visit the .dockerignore file reference guide at
+# https://docs.docker.com/engine/reference/builder/#dockerignore-file
+
+**/.DS_Store
+**/__pycache__
+**/.venv
+**/.classpath
+**/.dockerignore
+**/.env
+**/.git
+**/.gitignore
+**/.project
+**/.settings
+**/.toolstarget
+**/.vs
+**/.vscode
+**/*.*proj.user
+**/*.dbmdl
+**/*.jfm
+**/bin
+**/charts
+**/docker-compose*
+**/compose*
+**/Dockerfile*
+**/node_modules
+**/npm-debug.log
+**/obj
+**/secrets.dev.yaml
+**/values.dev.yaml
+LICENSE
+README.md

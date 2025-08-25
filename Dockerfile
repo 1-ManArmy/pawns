@@ -1,43 +1,31 @@
 # OneLast AI - Production Deployment Configuration
 
-# Docker Configuration for Production Deployment
-FROM node:20-alpine AS builder
-
-# Set working directory
+# ---------- Frontend build stage ----------
+FROM node:20-alpine AS build
 WORKDIR /app
 
-# Copy package files
+# Install build tools (optional if no native addons)
+RUN apk add --no-cache python3 make g++
+
+# Copy lock + manifest first
 COPY package*.json ./
-COPY tsconfig.json ./
-COPY vite.config.ts ./
-COPY tailwind.config.js ./
 
-# Install all dependencies (need dev deps for TypeScript/Vite build)
-RUN apk update && apk upgrade --no-cache \
-  && npm ci
+# Ensure devDependencies are installed (do NOT set NODE_ENV=production here)
+RUN npm ci
 
-# Copy source code
-COPY src/ ./src/
+# Copy required source files
+COPY tsconfig*.json ./
+COPY vite.config.* ./
 COPY index.html ./
-COPY public/ ./public/
+COPY public ./public
+COPY src ./src
 
-# Build the application
+# Build (Vite outputs to dist)
 RUN npm run build
 
-# Production stage
-FROM nginx:alpine AS production
-
-# Copy built files to nginx (only production assets)
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-# Copy nginx configuration
-COPY nginx.conf /etc/nginx/nginx.conf
-
-# Expose port 80
+# ---------- Nginx serve stage ----------
+FROM nginx:1.27-alpine
+RUN rm -rf /usr/share/nginx/html/*
+COPY --from=build /app/dist /usr/share/nginx/html
 EXPOSE 80
-
-# Health check (basic static asset availability)
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 CMD wget -qO- http://localhost/ >/dev/null 2>&1 || exit 1
-
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx","-g","daemon off;"]
