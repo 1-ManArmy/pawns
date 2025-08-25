@@ -11,7 +11,7 @@ import { FAQSection } from "@/components/FAQSection";
 import { EnvironmentStatus } from "@/components/EnvironmentStatus";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Settings } from "@phosphor-icons/react";
+import { GearIcon } from "@phosphor-icons/react";
 
 export function HomePage() {
   const [showEnvStatus, setShowEnvStatus] = useState(false);
@@ -48,7 +48,7 @@ export function HomePage() {
             onClick={() => setShowEnvStatus(true)}
             className="bg-black/50 backdrop-blur border-white/20 text-white hover:bg-white/10"
           >
-            <Settings className="h-4 w-4 mr-2" />
+            <GearIcon className="h-4 w-4 mr-2" />
             Environment
           </Button>
         </div>

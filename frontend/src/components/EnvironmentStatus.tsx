@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { AlertTriangle, CheckCircle, XCircle, Info } from '@phosphor-icons/react';
+import { Warning, CheckCircle, XCircle, Info } from '@phosphor-icons/react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -63,7 +63,7 @@ export function EnvironmentStatus({ showDetails = false, onClose }: EnvironmentS
             {validation.isValid ? (
               <CheckCircle className="h-5 w-5 text-green-600" />
             ) : (
-              <AlertTriangle className="h-5 w-5 text-amber-600" />
+              <Warning className="h-5 w-5 text-amber-600" />
             )}
             Environment Configuration
           </CardTitle>

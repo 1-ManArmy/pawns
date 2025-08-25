@@ -1,0 +1,1 @@
+This public directory holds static assets (images, icons, manifest, etc.). Remove this placeholder once real assets are added.

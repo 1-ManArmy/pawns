@@ -31,3 +31,6 @@ packages
 .devcontainer/
 
 .spark-workbench-id
+
+frontend/node_modules
+

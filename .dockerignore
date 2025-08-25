@@ -61,3 +61,6 @@ docker-compose.override.yml# Include any files or directories that you don't wan
 **/values.dev.yaml
 LICENSE
 README.md
+
+frontend/node_modules
+
