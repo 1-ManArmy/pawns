@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './FAQSection.css';
 // import { CaretDown, CaretUp } from '@phosphor-icons/react';
 
 interface FAQItem {
@@ -87,21 +88,11 @@ export function FAQSection() {
             
             {/* Animated Grid Pattern */}
             <div 
-                className="absolute inset-0 opacity-[0.15]"
-                style={{
-                    backgroundImage: `
-                        radial-gradient(circle at 25% 25%, rgba(219, 39, 119, 0.3) 0%, transparent 70%),
-                        radial-gradient(circle at 75% 75%, rgba(147, 51, 234, 0.3) 0%, transparent 70%),
-                        linear-gradient(rgba(219, 39, 119, 0.1) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(147, 51, 234, 0.1) 1px, transparent 1px)
-                    `,
-                    backgroundSize: '400px 400px, 300px 300px, 30px 30px, 30px 30px',
-                    animation: 'grid-move 25s linear infinite'
-                }}
+                className="absolute inset-0 opacity-[0.15] faq-grid-pattern"
             />
 
             {/* Floating Gradient Orbs */}
-            <div className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-r from-purple-500/20 via-pink-500/15 to-purple-600/20 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-r from-pink-500/15 via-purple-500/20 to-pink-600/15 rounded-full blur-3xl animate-pulse faq-orb-delay" />
             <div className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-r from-pink-500/15 via-purple-500/20 to-pink-600/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
             
             {/* Animated Border Elements */}
@@ -142,9 +133,9 @@ export function FAQSection() {
                                     </h3>
                                     <div className="flex-shrink-0 w-6 h-6 text-purple-400">
                                         {openItems.includes(index) ? (
-                                            {/* icon removed */}
+                                            <></>
                                         ) : (
-                                            {/* icon removed */}
+                                            <></>
                                         )}
                                     </div>
                                 </button>

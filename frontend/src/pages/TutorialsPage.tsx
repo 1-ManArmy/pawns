@@ -13,8 +13,15 @@ import {
   Brain
 // } from '@phosphor-icons/react';
 
-type AgentCategory =
   | 'Content Creation'
+  | 'AI Companions'
+  | 'Development Tools'
+  | 'Data & Analytics'
+  | 'Creative Arts'
+  | 'Business & Productivity'
+  | 'Learning & Education';
+type AgentCategory =
+  'Content Creation'
   | 'AI Companions'
   | 'Development Tools'
   | 'Data & Analytics'

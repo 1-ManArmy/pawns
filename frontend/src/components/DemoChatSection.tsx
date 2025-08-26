@@ -15,7 +15,6 @@ import {
   Stop
 // } from "@phosphor-icons/react";
 
-interface DemoMessage {
   id: string;
   content: string;
   type: 'user' | 'ai';
@@ -25,6 +24,17 @@ interface DemoMessage {
     type: 'file' | 'image' | 'voice';
     size?: string;
   }>;
+}
+interface DemoMessage {
+  id: string;
+  content: string;
+  type: 'user' | 'ai';
+  timestamp: Date;
+  attachments?: {
+    name: string;
+    type: 'file' | 'image' | 'voice';
+    size?: string;
+  }[];
 }
 
 export function DemoChatSection() {

@@ -1,4 +1,4 @@
-// import { LightbulbIcon } from "@phosphor-icons/react";
+// Icon import removed
 import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 
 export function AIStudioPage() {

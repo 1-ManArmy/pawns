@@ -1,4 +1,4 @@
-// import { Sparkle, Brain, Lightning, Robot } from "@phosphor-icons/react";
+// Icon import removed
 import { useState, useEffect } from "react";
 
 export const AIToolSection = () => {
@@ -107,9 +107,6 @@ export const AIToolSection = () => {
                                                 {phrases[currentPhrase]}
                                             </h3>
                                             {/* icon removed */}
-                                                size={24} 
-                                                className="absolute -top-2 -right-8 text-yellow-400 animate-pulse" 
-                                            />
                                         </div>
                                         
                                         <div className="space-y-3">

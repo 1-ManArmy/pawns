@@ -4,27 +4,20 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { 
-  PaperPlaneTilt, 
-  Paperclip, 
-  User,
-  Image as ImageIcon,
-  Microphone, 
-  Robot,
-  FileText,
-  Stop
-// } from "@phosphor-icons/react";
+// All icon imports removed
+
+interface AgentAttachment {
+  type: 'image' | 'file' | 'voice';
+  name: string;
+  size?: string;
+}
 
 interface AgentMessage {
   id: string;
   content: string;
   type: 'user' | 'ai';
   timestamp: Date;
-  attachments?: {
-    type: 'image' | 'file' | 'voice';
-    name: string;
-    size?: string;
-  }[];
+  attachments?: AgentAttachment[];
 }
 
 interface AgentPageTemplateProps {
@@ -205,7 +198,7 @@ export function AgentPageTemplate({
                           ? `bg-gradient-to-br ${gradientColors}` 
                           : `bg-gradient-to-br ${gradientColors.replace('from-', 'from-').replace('to-', 'to-')}`
                       }`}>
-                        {message.type === 'user' ? <User size={16} /> : <Robot size={16} />}
+                        {/* icon removed */}
                       </div>
 
                       {/* Message Content */}
@@ -222,9 +215,7 @@ export function AgentPageTemplate({
                             <div className="mt-2 space-y-1">
                               {message.attachments.map((attachment, index) => (
                                 <div key={index} className="flex items-center gap-2 text-xs opacity-80">
-                                  {attachment.type === 'image' && <ImageIcon size={12} />}
-                                  {attachment.type === 'file' && <FileText size={12} />}
-                                  {attachment.type === 'voice' && <Microphone size={12} />}
+                                  {/* icon removed */}
                                   <span>{attachment.name}</span>
                                   {attachment.size && <span>({attachment.size})</span>}
                                 </div>
@@ -243,7 +234,7 @@ export function AgentPageTemplate({
                   {isTyping && (
                     <div className="flex gap-3">
                       <div className={`w-8 h-8 rounded-full bg-gradient-to-br ${gradientColors} flex items-center justify-center text-white`}>
-                        <Robot size={16} />
+                        {/* icon removed */}
                       </div>
                       <div className={`bg-gray-900/80 border ${borderColor.replace('border-2', 'border')} rounded-2xl p-3`}>
                         <div className="flex gap-1">
@@ -277,7 +268,7 @@ export function AgentPageTemplate({
                     className={`aspect-square p-2 border-2 ${borderColor.replace('border-2', 'border')} bg-black/80 text-gray-300 hover:bg-gray-900/30`}
                     onClick={() => fileInputRef.current?.click()}
                   >
-                    <Paperclip size={16} />
+                    {/* icon removed */}
                   </Button>
 
                   {/* Text Input */}
@@ -302,7 +293,7 @@ export function AgentPageTemplate({
                     }`}
                     onClick={toggleRecording}
                   >
-                    {isRecording ? <Stop size={16} /> : <Microphone size={16} />}
+                    {/* icon removed */}
                   </Button>
 
                   {/* Send Button */}
@@ -312,7 +303,7 @@ export function AgentPageTemplate({
                     onClick={handleSendMessage}
                     disabled={!inputValue.trim()}
                   >
-                    <PaperPlaneTilt size={16} />
+                    {/* icon removed */}
                   </Button>
                 </div>
 

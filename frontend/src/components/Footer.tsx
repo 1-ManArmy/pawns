@@ -1,4 +1,4 @@
-// import { GithubLogo, TwitterLogo, LinkedinLogo, Heart, Globe, EnvelopeSimple, Phone } from "@phosphor-icons/react";
+// Icon import removed
 import { Link } from "react-router-dom";
 import { siteConfig } from "@/config/site";
 

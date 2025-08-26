@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import { GithubLogo, ArrowSquareOut, Star, GitBranch, Code, RocketLaunch, Users } from '@phosphor-icons/react';
+// Icon import removed
 
 interface RepoCardData {
   name: string;

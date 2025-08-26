@@ -10,7 +10,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-// import { List, X, CaretDown, Terminal, Sparkle, CaretUp, Microphone, Paperclip, PaperPlaneTilt, Code, Brain, Lightning, Shield, Users, Star, Check } from "@phosphor-icons/react";
+// Icon import removed
 
 // FAQ Data
 const faqData = [

@@ -1,27 +1,23 @@
-// import { Users, Code, Rocket, Lightning } from "@phosphor-icons/react";
+// Removed phosphor-icons imports as per instructions
 
 export function StatsSection() {
   const stats = [
     {
-      icon: Users,
       value: "10K+",
       label: "Active Users",
       description: "Growing community of AI enthusiasts"
     },
     {
-      icon: Code,
       value: "95%",
       label: "Success Rate",
       description: "AI model accuracy and performance"
     },
     {
-      icon: Rocket,
       value: "50+",
       label: "AI Tools",
       description: "Comprehensive suite of AI solutions"
     },
     {
-      icon: Lightning,
       value: "24/7",
       label: "Support",
       description: "Round-the-clock assistance"
@@ -51,40 +47,27 @@ export function StatsSection() {
 
           {/* Stats grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => {
-              const IconComponent = stat.icon;
-              return (
-                <div 
-                  key={index}
-                  className="group relative p-6 bg-card/50 backdrop-blur-sm rounded-2xl border border-border/50 hover:border-purple-500/50 transition-all duration-300 hover:scale-105"
-                >
-                  {/* Gradient border effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-blue-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
-                  
-                  {/* Icon */}
-                  <div className="flex justify-center mb-4">
-                    <div className="p-3 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-xl">
-                      <IconComponent className="w-8 h-8 text-purple-400" />
-                    </div>
-                  </div>
-                  
-                  {/* Value */}
-                  <div className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
-                    {stat.value}
-                  </div>
-                  
-                  {/* Label */}
-                  <div className="text-lg font-medium text-foreground mb-1">
-                    {stat.label}
-                  </div>
-                  
-                  {/* Description */}
-                  <div className="text-sm text-muted-foreground">
-                    {stat.description}
-                  </div>
+            {stats.map((stat, index) => (
+              <div 
+                key={index}
+                className="group relative p-6 bg-card/50 backdrop-blur-sm rounded-2xl border border-border/50 hover:border-purple-500/50 transition-all duration-300 hover:scale-105"
+              >
+                {/* Gradient border effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-blue-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                {/* Value */}
+                <div className="text-3xl lg:text-4xl font-bold text-foreground mb-2">
+                  {stat.value}
                 </div>
-              );
-            })}
+                {/* Label */}
+                <div className="text-lg font-medium text-foreground mb-1">
+                  {stat.label}
+                </div>
+                {/* Description */}
+                <div className="text-sm text-muted-foreground">
+                  {stat.description}
+                </div>
+              </div>
+            ))}
           </div>
 
           {/* Bottom text */}
