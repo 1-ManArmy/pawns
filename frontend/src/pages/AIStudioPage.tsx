@@ -1,4 +1,4 @@
-import { Lightbulb } from "@phosphor-icons/react";
+// import { LightbulbIcon } from "@phosphor-icons/react";
 import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 
 export function AIStudioPage() {
@@ -6,7 +6,7 @@ export function AIStudioPage() {
     <AgentPageTemplate
       agentName="IdeaForge"
       agentDescription="Revolutionary AI creative studio and innovation platform. Generate breakthrough ideas, develop concepts, create prototypes, and bring your vision to life with advanced AI-powered creative tools and inspiration."
-      agentIcon={<Lightbulb size={32} className="text-white" />}
+      agentIcon={<LightbulbIcon size={32} className="text-white" />}
       gradientColors="from-lime-400 via-green-500 to-emerald-600"
       borderColor="border-lime-500/30"
       primaryColor="from-lime-500/20 via-green-500/20 to-emerald-500/20"

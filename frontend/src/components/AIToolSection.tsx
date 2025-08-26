@@ -1,4 +1,4 @@
-import { Sparkle, Brain, Lightning, Robot } from "@phosphor-icons/react";
+// import { Sparkle, Brain, Lightning, Robot } from "@phosphor-icons/react";
 import { useState, useEffect } from "react";
 
 export const AIToolSection = () => {

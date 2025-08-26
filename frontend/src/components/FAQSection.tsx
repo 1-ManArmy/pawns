@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CaretDown, CaretUp } from '@phosphor-icons/react';
+// import { CaretDown, CaretUp } from '@phosphor-icons/react';
 
 interface FAQItem {
     question: string;

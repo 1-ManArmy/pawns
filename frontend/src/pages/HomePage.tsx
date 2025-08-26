@@ -11,7 +11,7 @@ import { FAQSection } from "@/components/FAQSection";
 import { EnvironmentStatus } from "@/components/EnvironmentStatus";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { GearIcon } from "@phosphor-icons/react";
+// import { GearIcon } from "@phosphor-icons/react";
 
 export function HomePage() {
   const [showEnvStatus, setShowEnvStatus] = useState(false);

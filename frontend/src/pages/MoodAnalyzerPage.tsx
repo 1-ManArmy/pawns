@@ -1,4 +1,4 @@
-import { Heart } from "@phosphor-icons/react";
+// import { Heart } from "@phosphor-icons/react";
 import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 
 export function MoodAnalyzerPage() {

@@ -1,4 +1,4 @@
-import { Users, Code, Rocket, Lightning } from "@phosphor-icons/react";
+// import { Users, Code, Rocket, Lightning } from "@phosphor-icons/react";
 
 export function StatsSection() {
   const stats = [

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Download, Star, Users } from "@phosphor-icons/react";
+// import { Download, Star, Users } from "@phosphor-icons/react";
 
 export function BannerSection() {
   return (

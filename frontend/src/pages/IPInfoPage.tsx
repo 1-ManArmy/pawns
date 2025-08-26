@@ -1,4 +1,4 @@
-import { Globe } from "@phosphor-icons/react";
+// import { Globe } from "@phosphor-icons/react";
 import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 
 export function IPInfoPage() {

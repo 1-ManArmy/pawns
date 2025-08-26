@@ -5,7 +5,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { List, X, CaretDown } from "@phosphor-icons/react";
+// import { List, X, CaretDown } from "@phosphor-icons/react";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 

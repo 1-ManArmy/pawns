@@ -1,4 +1,4 @@
-import { FileText } from "@phosphor-icons/react";
+// import { FileText } from "@phosphor-icons/react";
 import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 
 export function ReportsPage() {

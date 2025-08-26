@@ -1,4 +1,4 @@
-import { VideoCamera } from "@phosphor-icons/react";
+// import { VideoCamera } from "@phosphor-icons/react";
 import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 
 export function CinematicPage() {

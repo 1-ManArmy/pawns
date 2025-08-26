@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Terminal } from "@phosphor-icons/react";
+// import { Terminal } from "@phosphor-icons/react";
 
 export function TerminalDisplay() {
   const [commandIndex, setCommandIndex] = useState(0);

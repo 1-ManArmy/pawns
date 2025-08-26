@@ -1,4 +1,4 @@
-import { ChatCircle } from "@phosphor-icons/react";
+// import { ChatCircle } from "@phosphor-icons/react";
 import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 
 function ChatPage() {

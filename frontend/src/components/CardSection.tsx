@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Code, Brain, Rocket } from "@phosphor-icons/react";
+// import { ArrowRight, Code, Brain, Rocket } from "@phosphor-icons/react";
 
 export function CardSection() {
   const cards = [

@@ -1,4 +1,4 @@
-import { Gear } from "@phosphor-icons/react";
+// import { Gear } from "@phosphor-icons/react";
 import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 
 export function SettingsPage() {

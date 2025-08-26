@@ -1,4 +1,4 @@
-import { UserCircle } from "@phosphor-icons/react";
+// import { UserCircle } from "@phosphor-icons/react";
 import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 
 export function ProfilePage() {

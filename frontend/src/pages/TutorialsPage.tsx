@@ -11,7 +11,7 @@ import {
   Terminal,
   Code,
   Brain
-} from '@phosphor-icons/react';
+// } from '@phosphor-icons/react';
 
 type AgentCategory =
   | 'Content Creation'

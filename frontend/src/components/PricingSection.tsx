@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, Crown, Star, Lightning } from "@phosphor-icons/react";
+// import { Check, Crown, Star, Lightning } from "@phosphor-icons/react";
 
 export function PricingSection() {
   const plans = [

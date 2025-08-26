@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Terminal, Sparkle } from "@phosphor-icons/react";
+// import { Terminal, Sparkle } from "@phosphor-icons/react";
 
 export function HeroSection() {
   return (

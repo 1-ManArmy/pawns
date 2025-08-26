@@ -1,4 +1,4 @@
-import { PaintBrush } from "@phosphor-icons/react";
+// import { PaintBrush } from "@phosphor-icons/react";
 import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 
 export function CreatorToolsPage() {

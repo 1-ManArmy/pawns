@@ -1,4 +1,4 @@
-import { Shield } from "@phosphor-icons/react";
+// import { Shield } from "@phosphor-icons/react";
 import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 
 export function AuthPage() {

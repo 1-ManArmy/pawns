@@ -1,4 +1,4 @@
-import { Microphone } from "@phosphor-icons/react";
+// import { Microphone } from "@phosphor-icons/react";
 import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 
 export function VoiceAssistantPage() {

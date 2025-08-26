@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { BookOpen } from "@phosphor-icons/react";
+// import { BookOpen } from "@phosphor-icons/react";
 import { PageTemplate } from "@/components/PageTemplate";
 import { AgentPageTemplate } from "@/components/AgentPageTemplate";
 

@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { CaretDown, CaretUp, MagnifyingGlass } from '@phosphor-icons/react';
+// import { CaretDown, CaretUp, MagnifyingGlass } from '@phosphor-icons/react';
 
 type Category = 'all' | 'platform' | 'agents' | 'community' | 'creators' | 'education' | 'philosophy';
 

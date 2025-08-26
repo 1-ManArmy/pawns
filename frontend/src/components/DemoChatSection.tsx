@@ -13,7 +13,7 @@ import {
   FileText,
   Image as ImageIcon,
   Stop
-} from "@phosphor-icons/react";
+// } from "@phosphor-icons/react";
 
 interface DemoMessage {
   id: string;
