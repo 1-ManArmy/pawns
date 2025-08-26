@@ -48,7 +48,7 @@ export function HomePage() {
             onClick={() => setShowEnvStatus(true)}
             className="bg-black/50 backdrop-blur border-white/20 text-white hover:bg-white/10"
           >
-            <GearIcon className="h-4 w-4 mr-2" />
+            {/* icon removed */}
             Environment
           </Button>
         </div>

@@ -42,7 +42,7 @@ export function EnvironmentStatus({ showDetails = false, onClose }: EnvironmentS
   if (isLoading) {
     return (
       <Alert>
-        <Info className="h-4 w-4" />
+  {/* icon removed */}
         <AlertDescription>Checking environment configuration...</AlertDescription>
       </Alert>
     );
@@ -61,15 +61,15 @@ export function EnvironmentStatus({ showDetails = false, onClose }: EnvironmentS
         <div className="flex items-center justify-between">
           <CardTitle className="flex items-center gap-2 text-amber-800 dark:text-amber-200">
             {validation.isValid ? (
-              <CheckCircle className="h-5 w-5 text-green-600" />
+              {/* icon removed */}
             ) : (
-              <Warning className="h-5 w-5 text-amber-600" />
+              {/* icon removed */}
             )}
             Environment Configuration
           </CardTitle>
           {onClose && (
             <Button variant="ghost" size="sm" onClick={onClose}>
-              <XCircle className="h-4 w-4" />
+              {/* icon removed */}
             </Button>
           )}
         </div>
@@ -87,7 +87,7 @@ export function EnvironmentStatus({ showDetails = false, onClose }: EnvironmentS
             <h4 className="font-medium text-red-800 dark:text-red-200">Configuration Issues:</h4>
             {validation.errors.map((error, index) => (
               <Alert key={index} variant="destructive">
-                <XCircle className="h-4 w-4" />
+                {/* icon removed */}
                 <AlertDescription>{error}</AlertDescription>
               </Alert>
             ))}
@@ -103,7 +103,7 @@ export function EnvironmentStatus({ showDetails = false, onClose }: EnvironmentS
             <div className="flex flex-wrap gap-2">
               {configuredServices.map(([service]) => (
                 <Badge key={service} variant="default" className="bg-green-100 text-green-800">
-                  <CheckCircle className="h-3 w-3 mr-1" />
+                  {/* icon removed */}
                   {service.toUpperCase()}
                 </Badge>
               ))}
@@ -120,7 +120,7 @@ export function EnvironmentStatus({ showDetails = false, onClose }: EnvironmentS
             <div className="flex flex-wrap gap-2">
               {missingServices.map(([service]) => (
                 <Badge key={service} variant="outline" className="border-amber-300 text-amber-700">
-                  <Info className="h-3 w-3 mr-1" />
+                  {/* icon removed */}
                   {service.toUpperCase()}
                 </Badge>
               ))}
@@ -193,9 +193,9 @@ function AgentStatus({ name, services, health, alwaysReady }: AgentStatusProps) 
     }`}>
       <div className="flex items-center gap-1 mb-1">
         {isReady ? (
-          <CheckCircle className="h-3 w-3 text-green-600" />
+          {/* icon removed */}
         ) : (
-          <XCircle className="h-3 w-3 text-gray-400" />
+          {/* icon removed */}
         )}
         <span className={`font-medium ${isReady ? 'text-green-800 dark:text-green-200' : 'text-gray-600 dark:text-gray-400'}`}>
           {name}

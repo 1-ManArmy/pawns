@@ -142,9 +142,9 @@ export function FAQSection() {
                                     </h3>
                                     <div className="flex-shrink-0 w-6 h-6 text-purple-400">
                                         {openItems.includes(index) ? (
-                                            <CaretUp size={24} />
+                                            {/* icon removed */}
                                         ) : (
-                                            <CaretDown size={24} />
+                                            {/* icon removed */}
                                         )}
                                     </div>
                                 </button>

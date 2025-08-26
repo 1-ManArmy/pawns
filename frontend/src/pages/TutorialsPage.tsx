@@ -294,7 +294,7 @@ export function TutorialsPage() {
           </div>
           <div className="px-4 py-3 border-b border-white/10 bg-[#2d2d30]">
             <div className="relative">
-              <MagnifyingGlass size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+          {/* icon removed */}
               <input
                 value={search}
                 onChange={e => setSearch(e.target.value)}
@@ -310,7 +310,7 @@ export function TutorialsPage() {
                   onClick={() => toggleCategory(cat)}
                   className="w-full flex items-center gap-2 px-4 py-1 text-[11px] tracking-wide font-semibold text-gray-400 uppercase hover:text-gray-200"
                 >
-                  {openCategories.includes(cat) ? <CaretDown size={12} className="transition-transform" /> : <CaretRight size={12} className="transition-transform" />}
+                  {/* icon removed */}
                   {cat}
                 </button>
                 <div className={`${openCategories.includes(cat) ? 'block' : 'hidden'} ml-2`}>
@@ -365,14 +365,14 @@ export function TutorialsPage() {
                   <ul className="grid sm:grid-cols-2 gap-3">
                     {activeAgent.features.map(f => (
                       <li key={f} className="flex items-start gap-2 p-3 rounded-md bg-white/5 border border-white/10 text-sm text-gray-300">
-                        <span className="mt-0.5"><Code size={14} className="text-sky-400" /></span>
+                        {/* icon removed */}
                         <span>{f}</span>
                       </li>
                     ))}
                   </ul>
                 </section>
                 <section className="mb-10">
-                  <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-100 mb-4"><ListChecks size={18} className="text-green-400" /> Getting Started</h3>
+                  <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-100 mb-4">Getting Started</h3>
                   <ol className="space-y-3 list-decimal ml-5 text-sm text-gray-300">
                     {activeAgent.howTo.map((step, i) => (
                       <li key={i} className="leading-relaxed">{step}</li>

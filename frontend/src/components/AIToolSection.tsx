@@ -83,13 +83,13 @@ export const AIToolSection = () => {
                                     <div className="relative mb-8">
                                         <div className="flex items-center justify-center space-x-6">
                                             <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center transform rotate-12 animate-pulse">
-                                                <Brain size={32} className="text-white" />
+                                                {/* icon removed */}
                                             </div>
                                             <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center transform -rotate-6 animate-pulse" style={{ animationDelay: '0.5s' }}>
-                                                <Robot size={40} className="text-white" />
+                                                {/* icon removed */}
                                             </div>
                                             <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center transform rotate-45 animate-pulse" style={{ animationDelay: '1s' }}>
-                                                <Lightning size={32} className="text-white" />
+                                                {/* icon removed */}
                                             </div>
                                         </div>
                                         
@@ -106,7 +106,7 @@ export const AIToolSection = () => {
                                             >
                                                 {phrases[currentPhrase]}
                                             </h3>
-                                            <Sparkle 
+                                            {/* icon removed */}
                                                 size={24} 
                                                 className="absolute -top-2 -right-8 text-yellow-400 animate-pulse" 
                                             />
@@ -147,7 +147,7 @@ export const AIToolSection = () => {
                         </blockquote>
                         <div className="mt-6 flex items-center justify-center space-x-3">
                             <div className="w-16 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent" />
-                            <Sparkle size={20} className="text-yellow-400" />
+                            {/* icon removed */}
                             <div className="w-16 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent" />
                         </div>
                     </div>

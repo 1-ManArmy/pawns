@@ -12,7 +12,7 @@ export function BlogPage() {
       <AgentPageTemplate
         agentName="AIBlogster"
         agentDescription="Intelligent AI-powered blogging and content creation platform. Generate engaging blog posts, optimize content for SEO, create compelling narratives, and manage your content strategy with advanced AI assistance."
-  // agentIcon={<Article size={32} className="text-white" />}
+  // agentIcon={null}
         gradientColors="from-blue-400 via-indigo-500 to-purple-600"
         borderColor="border-blue-500/30"
         primaryColor="from-blue-500/20 via-indigo-500/20 to-purple-500/20"

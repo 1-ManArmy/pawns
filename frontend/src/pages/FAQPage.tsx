@@ -91,7 +91,7 @@ export default function FAQPage() {
           </div>
           {/* Search */}
           <div className="relative w-full md:w-80">
-            <MagnifyingGlass size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-white/40" />
+            {/* icon removed */}
             <input
               type="text"
               placeholder="Search FAQ..."
@@ -116,7 +116,7 @@ export default function FAQPage() {
                       <h3 className="text-lg font-semibold text-white pr-4">{item.question}</h3>
                       <p className="text-[11px] uppercase tracking-wide text-purple-300/60 mt-1 font-medium">{item.category}</p>
                     </div>
-                    <div className="flex-shrink-0 w-6 h-6 text-purple-400">{open ? <CaretUp size={24} /> : <CaretDown size={24} />}</div>
+                    <div className="flex-shrink-0 w-6 h-6 text-purple-400">{open ? null : null}</div>
                   </button>
                   <div className={`transition-all duration-300 ease-in-out ${open ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
                     <div className="px-6 pb-5 pt-0">

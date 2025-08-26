@@ -6,7 +6,7 @@ export function MemoryPage() {
     <AgentPageTemplate
       agentName="Memora"
       agentDescription="Advanced AI memory enhancement and knowledge management system. Store, organize, retrieve, and connect information seamlessly. Boost your cognitive abilities with intelligent memory assistance and context-aware recall."
-      agentIcon={<Brain size={32} className="text-white" />}
+  agentIcon={null}
       gradientColors="from-indigo-400 via-purple-500 to-pink-600"
       borderColor="border-indigo-500/30"
       primaryColor="from-indigo-500/20 via-purple-500/20 to-pink-500/20"

@@ -6,7 +6,7 @@ export function CinematicPage() {
     <AgentPageTemplate
       agentName="CineGen"
       agentDescription="Revolutionary AI-powered video and cinematic content generator. Create stunning visuals, edit videos, generate scripts, and produce professional-quality cinematic content with advanced artificial intelligence."
-      agentIcon={<VideoCamera size={32} className="text-white" />}
+  agentIcon={null}
       gradientColors="from-red-400 via-orange-500 to-yellow-600"
       borderColor="border-red-500/30"
       primaryColor="from-red-500/20 via-orange-500/20 to-yellow-500/20"

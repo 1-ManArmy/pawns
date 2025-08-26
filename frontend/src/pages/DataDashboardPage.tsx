@@ -6,7 +6,7 @@ export function DataDashboardPage() {
     <AgentPageTemplate
       agentName="DataSphere"
       agentDescription="Comprehensive AI data management and visualization platform. Explore datasets, create interactive dashboards, perform advanced analytics, and discover insights with intelligent data processing and machine learning."
-      agentIcon={<Database size={32} className="text-white" />}
+  agentIcon={null}
       gradientColors="from-cyan-400 via-blue-500 to-purple-600"
       borderColor="border-cyan-500/30"
       primaryColor="from-cyan-500/20 via-blue-500/20 to-purple-500/20"

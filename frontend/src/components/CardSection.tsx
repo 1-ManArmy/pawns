@@ -9,7 +9,7 @@ export function CardSection() {
       description: "See how our recent and upcoming releases can help your organization drive efficiency, security, and innovation.",
       buttonText: "See what's new",
       gradient: "from-green-400/20 via-blue-400/30 to-purple-600/20",
-      icon: <Rocket size={32} className="text-green-400" />,
+  icon: null,
       decorativeElements: (
         <>
           <div className="absolute top-4 right-4 w-8 h-8 bg-green-400/20 rounded-full animate-pulse"></div>
@@ -23,7 +23,7 @@ export function CardSection() {
       description: "Many enterprises quite reasonably ask, \"How do I know Copilot is conferring these benefits for my team?\" To answer that question, this guide will walk you through a framework for evaluating impact across four stages.",
       buttonText: "Learn more",
       gradient: "from-blue-500/20 via-purple-500/30 to-pink-500/20",
-      icon: <Brain size={32} className="text-blue-400" />,
+  icon: null,
       decorativeElements: (
         <>
           <div className="absolute top-6 right-6 w-12 h-12 bg-blue-500/10 rounded-full"></div>
@@ -37,7 +37,7 @@ export function CardSection() {
       description: "Developers tell us how Phoenix AI Copilot and other AI coding tools are transforming their work and changing how they spend their days.",
       buttonText: "Learn more",
       gradient: "from-purple-500/20 via-pink-500/30 to-orange-500/20",
-      icon: <Code size={32} className="text-purple-400" />,
+  icon: null,
       decorativeElements: (
         <>
           <div className="absolute top-8 right-8 w-10 h-10 bg-purple-500/15 rounded-full"></div>
@@ -95,7 +95,7 @@ export function CardSection() {
                   className="self-start p-0 h-auto text-blue-400 hover:text-blue-300 group-hover:translate-x-1 transition-all duration-200"
                 >
                   {card.buttonText}
-                  <ArrowRight size={16} className="ml-2" />
+                  {/* icon removed */}
                 </Button>
               </CardContent>
             </Card>

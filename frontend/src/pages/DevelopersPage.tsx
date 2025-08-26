@@ -97,24 +97,24 @@ export function DevelopersPage() {
         {/* Hero */}
         <header className="text-center mb-20">
           <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm text-white/70 text-sm mb-6">
-            <GithubLogo size={18} className="text-white" /> open source initiative
+            open source initiative
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent mb-6">Developer Hub</h1>
           <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">Explore Royal AI™ agent repositories, platform service modules, and integration starter kits. Contribute, fork, extend—help shape community‑first AI infrastructure.</p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <a href="https://github.com/onelastai" target="_blank" rel="noopener" className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-medium shadow-lg shadow-purple-600/30 transition-all">
-              <GithubLogo size={20} /> Org Profile <ArrowSquareOut size={18} className="opacity-80 group-hover:translate-x-0.5 transition-transform" />
+              Org Profile
             </a>
-            <a href="https://github.com/orgs/onelastai/repositories" target="_blank" rel="noopener" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white/90 font-medium transition-all border border-white/10">All Repos <ArrowSquareOut size={18} /></a>
+            <a href="https://github.com/orgs/onelastai/repositories" target="_blank" rel="noopener" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white/90 font-medium transition-all border border-white/10">All Repos</a>
           </div>
         </header>
 
         {/* Agents Section */}
-        <SectionHeading icon={<RocketLaunch size={22} className="text-pink-400" />} title="AI Agent Repositories" subtitle="Each agent is isolated for modular evolution & community contribution." />
+  <SectionHeading icon={null} title="AI Agent Repositories" subtitle="Each agent is isolated for modular evolution & community contribution." />
         <RepoGrid repos={agentRepos} baseUrl="https://github.com/onelastai" loadingLabel={rateLimited ? 'Rate limit hit – showing cached list' : undefined} />
 
         {/* Platform Section */}
-        <SectionHeading className="mt-24" icon={<Code size={22} className="text-sky-400" />} title="Platform & Core Services" subtitle="Foundational building blocks powering orchestration, memory, auth & analytics." />
+  <SectionHeading className="mt-24" icon={null} title="Platform & Core Services" subtitle="Foundational building blocks powering orchestration, memory, auth & analytics." />
         <RepoGrid repos={platformRepos} baseUrl="https://github.com/onelastai" minimal loadingLabel={rateLimited ? 'Rate limit hit – showing cached list' : undefined} />
 
         {/* Contribute CTA */}
@@ -124,7 +124,7 @@ export function DevelopersPage() {
           <div className="flex flex-wrap justify-center gap-4">
             <a href="https://github.com/onelastai/.github/issues" target="_blank" rel="noopener" className="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium border border-white/10 transition-colors">Open Discussion</a>
             <a href="https://github.com/onelastai" target="_blank" rel="noopener" className="group px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-medium shadow-lg shadow-purple-600/30 flex items-center gap-2">
-              Start Contributing <ArrowSquareOut size={18} className="opacity-80 group-hover:translate-x-0.5 transition-transform" />
+              Start Contributing
             </a>
           </div>
         </div>
@@ -172,7 +172,7 @@ function RepoCard({ data, baseUrl, minimal }: { data: RepoCardData; baseUrl: str
           {data.agent && <span className="inline-block w-2.5 h-2.5 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 animate-pulse" />}
           {data.name}
         </h3>
-        <ArrowSquareOut size={18} className="text-white/40 group-hover:text-white/70 transition-colors" />
+  {/* icon removed */}
       </div>
       <p className="text-white/60 text-sm leading-relaxed mb-4 min-h-[48px]">{data.description}</p>
       {!minimal && (
@@ -183,9 +183,9 @@ function RepoCard({ data, baseUrl, minimal }: { data: RepoCardData; baseUrl: str
         </div>
       )}
       <div className="flex items-center gap-4 text-[12px] text-white/50">
-        <span className="flex items-center gap-1"><Star size={14} /> {data.stars ?? 0}</span>
-        <span className="flex items-center gap-1"><GitBranch size={14} /> {data.branches ?? 1}</span>
-        <span className="flex items-center gap-1"><Users size={14} /> community</span>
+  <span className="flex items-center gap-1">Stars: {data.stars ?? 0}</span>
+  <span className="flex items-center gap-1">Branches: {data.branches ?? 1}</span>
+  <span className="flex items-center gap-1">Community</span>
       </div>
     </a>
   );

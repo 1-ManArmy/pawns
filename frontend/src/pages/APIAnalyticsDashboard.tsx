@@ -6,7 +6,7 @@ export function APIAnalyticsDashboard() {
     <AgentPageTemplate
       agentName="DataVision"
       agentDescription="Advanced AI-powered analytics and data visualization platform. Transform complex data into actionable insights with intelligent charts, real-time monitoring, predictive analytics, and comprehensive reporting dashboards."
-      agentIcon={<ChartBarIcon size={32} className="text-white" />}
+  agentIcon={null}
       gradientColors="from-teal-400 via-blue-500 to-indigo-600"
       borderColor="border-teal-500/30"
       primaryColor="from-teal-500/20 via-blue-500/20 to-indigo-500/20"

@@ -12,7 +12,7 @@ export function DocumentationPage() {
       <AgentPageTemplate
         agentName="DocuMind"
         agentDescription="Advanced AI documentation and knowledge management system. Create comprehensive documentation, organize information, generate technical guides, and maintain knowledge bases with intelligent assistance."
-        agentIcon={<BookOpen size={32} className="text-white" />}
+  agentIcon={null}
         gradientColors="from-green-400 via-blue-500 to-purple-600"
         borderColor="border-green-500/30"
         primaryColor="from-green-500/20 via-blue-500/20 to-purple-500/20"

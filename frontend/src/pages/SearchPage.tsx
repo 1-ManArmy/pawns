@@ -6,7 +6,7 @@ export function SearchPage() {
     <AgentPageTemplate
       agentName="InfoSeek"
       agentDescription="Revolutionary AI-powered search and information discovery platform. Find precise answers, explore topics deeply, get contextual insights, and discover relevant information with intelligent search algorithms."
-      agentIcon={<MagnifyingGlass size={32} className="text-white" />}
+  agentIcon={null}
       gradientColors="from-pink-400 via-rose-500 to-purple-600"
       borderColor="border-pink-500/30"
       primaryColor="from-pink-500/20 via-rose-500/20 to-purple-500/20"

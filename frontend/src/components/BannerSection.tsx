@@ -14,7 +14,7 @@ export function BannerSection() {
           {/* Main banner content */}
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full border border-purple-500/30">
-              <Star className="w-4 h-4 text-yellow-400" weight="fill" />
+              {/* icon removed */}
               <span className="text-sm font-medium text-foreground">Premium Apps Available</span>
             </div>
             
@@ -53,7 +53,7 @@ export function BannerSection() {
               size="lg" 
               className="px-8 py-6 text-lg font-medium bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-full transition-all duration-200 hover:scale-105 border-0"
             >
-              <Download className="w-5 h-5 mr-2" />
+              {/* icon removed */}
               Download Apps
             </Button>
             
@@ -62,7 +62,7 @@ export function BannerSection() {
               size="lg" 
               className="px-8 py-6 text-lg font-medium bg-transparent border-2 border-purple-500/50 text-foreground hover:bg-purple-500/10 rounded-full transition-all duration-200 hover:scale-105"
             >
-              <Users className="w-5 h-5 mr-2" />
+              {/* icon removed */}
               Join Community
             </Button>
           </div>

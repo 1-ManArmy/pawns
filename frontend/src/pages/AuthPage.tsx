@@ -6,7 +6,7 @@ export function AuthPage() {
     <AgentPageTemplate
       agentName="AuthWise"
       agentDescription="Intelligent authentication and security management system. Advanced user verification, biometric authentication, security monitoring, and AI-powered threat detection for comprehensive digital protection."
-      agentIcon={<Shield size={32} className="text-white" />}
+  agentIcon={null}
       gradientColors="from-amber-400 via-yellow-500 to-orange-600"
       borderColor="border-amber-500/30"
       primaryColor="from-amber-500/20 via-yellow-500/20 to-orange-500/20"
