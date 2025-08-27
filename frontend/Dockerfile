@@ -1,17 +1,30 @@
-# Stage 1: Build stage
-FROM node:20-alpine3.20 AS build
+# Build stage
+FROM node:20-alpine3.20 as build
 
 # Set working directory
 WORKDIR /app
 
-# Install dependencies (only package files first for caching)
+# Install build dependencies
+RUN apk add --no-cache python3 make g++
+
+# Install dependencies first (for better caching)
 COPY package*.json ./
-RUN npm ci
+RUN npm install --legacy-peer-deps
 
-# Copy source code
-COPY . .
+# Copy configuration files
+COPY tsconfig.json ./
+COPY vite.config.ts ./
+COPY index.html ./
+COPY tailwind.config.js ./
+COPY theme.json ./
+COPY components.json ./
 
-# Build frontend for production
+# Copy source directories
+COPY public/ ./public/
+COPY src/ ./src/
+COPY scripts/ ./scripts/
+
+# Build application
 RUN npm run build
 
 
