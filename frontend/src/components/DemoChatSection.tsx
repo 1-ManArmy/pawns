@@ -4,35 +4,16 @@ import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Badge } from "@/components/ui/badge";
-import { 
-  PaperPlaneRight, 
-  Microphone, 
-  Paperclip, 
-  Robot,
-  User,
-  FileText,
-  Image as ImageIcon,
-  Stop
-// } from "@phosphor-icons/react";
+// All icon imports removed
 
-  id: string;
-  content: string;
-  type: 'user' | 'ai';
-  timestamp: Date;
-  attachments?: Array<{
-    name: string;
-    type: 'file' | 'image' | 'voice';
-    size?: string;
-  }>;
-}
 interface DemoMessage {
   id: string;
   content: string;
   type: 'user' | 'ai';
   timestamp: Date;
   attachments?: {
+    type: 'image' | 'file' | 'voice';
     name: string;
-    type: 'file' | 'image' | 'voice';
     size?: string;
   }[];
 }
@@ -224,7 +205,7 @@ export function DemoChatSection() {
                         ? 'bg-gradient-to-br from-red-500 to-red-600' 
                         : 'bg-gradient-to-br from-red-600 to-red-700'
                     }`}>
-                      {message.type === 'user' ? <User size={16} /> : <Robot size={16} />}
+                      <span className="text-xs font-bold">{message.type === 'user' ? 'U' : 'AI'}</span>
                     </div>
 
                     {/* Message Content */}
@@ -241,9 +222,9 @@ export function DemoChatSection() {
                           <div className="mt-2 space-y-1">
                             {message.attachments.map((attachment, index) => (
                               <div key={index} className="flex items-center gap-2 text-xs opacity-80">
-                                {attachment.type === 'image' && <ImageIcon size={12} />}
-                                {attachment.type === 'file' && <FileText size={12} />}
-                                {attachment.type === 'voice' && <Microphone size={12} />}
+                                {attachment.type === 'image' && <span>[img]</span>}
+                                {attachment.type === 'file' && <span>[file]</span>}
+                                {attachment.type === 'voice' && <span>[voice]</span>}
                                 <span>{attachment.name}</span>
                                 {attachment.size && <span>({attachment.size})</span>}
                               </div>
@@ -262,7 +243,7 @@ export function DemoChatSection() {
                 {isTyping && (
                   <div className="flex gap-3">
                     <div className="w-8 h-8 rounded-full bg-gradient-to-br from-red-600 to-red-700 flex items-center justify-center text-white">
-                      <Robot size={16} />
+                      <span className="text-xs font-bold">AI</span>
                     </div>
                     <div className="bg-gray-900/80 border border-red-500/20 rounded-2xl p-3">
                       <div className="flex gap-1">
@@ -297,7 +278,7 @@ export function DemoChatSection() {
                   onClick={() => fileInputRef.current?.click()}
                   disabled={requestCount >= 4}
                 >
-                  <Paperclip size={16} />
+                  <span className="text-xs">📎</span>
                 </Button>
 
                 {/* Text Input */}
@@ -324,7 +305,7 @@ export function DemoChatSection() {
                   onClick={toggleRecording}
                   disabled={requestCount >= 4}
                 >
-                  {isRecording ? <Stop size={16} /> : <Microphone size={16} />}
+                  <span className="text-xs">{isRecording ? '■' : '🎤'}</span>
                 </Button>
 
                 {/* Send Button */}
@@ -334,7 +315,7 @@ export function DemoChatSection() {
                   onClick={handleSendMessage}
                   disabled={!inputValue.trim() || requestCount >= 4}
                 >
-                  <PaperPlaneRight size={16} />
+                  <span className="text-xs">➤</span>
                 </Button>
               </div>
 

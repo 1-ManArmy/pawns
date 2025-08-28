@@ -2,6 +2,7 @@
     "recommendations": [
         "github.copilot",
         "docker.labs-ai-tools-vscode",
-        "docker.docker"
+        "docker.docker",
+        "visualstudioexptteam.intellicode-api-usage-examples"
     ]
 }

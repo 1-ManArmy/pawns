@@ -9,7 +9,6 @@ export function HeroSection() {
         <div className="space-y-8 relative z-10">
           <div className="space-y-6">
             <div className="flex items-center space-x-2 mb-4">
-              <Sparkle size={24} className="text-purple-400" />
               <span className="text-purple-400 font-medium">AI-Powered Terminal</span>
             </div>
             
@@ -53,7 +52,7 @@ export function HeroSection() {
             {/* Terminal Header */}
             <div className="flex items-center justify-between mb-4 pb-3 border-b border-gray-700/50">
               <div className="flex items-center gap-3">
-                <Terminal className="text-purple-400" size={20} />
+                <span className="text-purple-400 text-sm">▶</span>
                 <span className="text-sm font-medium text-gray-300">OneLast AI Preview</span>
               </div>
               <div className="flex items-center gap-2">

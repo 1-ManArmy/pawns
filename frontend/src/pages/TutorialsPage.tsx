@@ -1,18 +1,7 @@
 import React, { useState, useMemo } from 'react';
-import {
-  MagnifyingGlass,
-  CaretDown,
-  CaretRight,
-  BookOpen,
-  Lightning,
-  ListChecks,
-  Info,
-  Warning,
-  Terminal,
-  Code,
-  Brain
-// } from '@phosphor-icons/react';
+// All icon imports removed
 
+type TutorialCategory =
   | 'Content Creation'
   | 'AI Companions'
   | 'Development Tools'
@@ -296,7 +285,7 @@ export function TutorialsPage() {
         {/* Sidebar */}
         <aside className="w-[300px] md:w-[340px] flex flex-col border-r border-white/10 bg-[#252526]">
           <div className="px-5 py-4 border-b border-white/10 flex items-center gap-2 bg-[#2d2d30]">
-            <BookOpen size={18} className="text-teal-300" />
+            <span className="text-teal-300 text-lg">📖</span>
             <span className="text-[13px] font-semibold tracking-wide text-gray-300 uppercase">Royal AI™ Agents</span>
           </div>
           <div className="px-4 py-3 border-b border-white/10 bg-[#2d2d30]">
@@ -344,7 +333,7 @@ export function TutorialsPage() {
         <main className="flex-1 flex flex-col bg-[#1e1e1e]">
           <div className="px-6 py-4 border-b border-white/10 bg-[#2d2d30] flex flex-col sm:flex-row sm:items-center gap-1">
             <h1 className="text-[15px] font-semibold text-gray-200 flex items-center gap-2">
-              <Lightning size={16} className="text-sky-400" />
+              <span className="text-sky-400 text-sm">⚡</span>
               {activeAgent ? `${activeAgent.emoji} ${activeAgent.name}` : 'Royal AI™ Tutorials & Guides'}
             </h1>
             <span className="text-[12px] text-gray-500 sm:ml-4">
@@ -354,7 +343,7 @@ export function TutorialsPage() {
           <div className="flex-1 overflow-y-auto p-8 space-y-10">
             {!activeAgent && (
               <div className="flex flex-col items-center justify-center text-center py-24 max-w-lg mx-auto">
-                <Brain size={72} className="text-sky-500/40 mb-8" />
+                <span className="text-sky-500/40 text-6xl mb-8">🧠</span>
                 <h2 className="text-2xl font-bold text-gray-200 mb-4">Welcome to Royal AI™ Tutorials</h2>
                 <p className="text-gray-400 text-sm leading-relaxed">Browse agents on the left to explore detailed guides, feature breakdowns, workflow steps, and practical usage examples designed to accelerate learning & mastery.</p>
               </div>

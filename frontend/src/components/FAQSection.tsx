@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './FAQSection.css';
+// CSS import removed - using Tailwind classes instead
 // import { CaretDown, CaretUp } from '@phosphor-icons/react';
 
 interface FAQItem {
@@ -131,11 +131,11 @@ export function FAQSection() {
                                     <h3 className="text-lg font-semibold text-white pr-4">
                                         {item.question}
                                     </h3>
-                                    <div className="flex-shrink-0 w-6 h-6 text-purple-400">
+                                    <div className="flex-shrink-0 w-6 h-6 text-purple-400 flex items-center justify-center">
                                         {openItems.includes(index) ? (
-                                            <></>
+                                            <span className="text-lg">−</span>
                                         ) : (
-                                            <></>
+                                            <span className="text-lg">+</span>
                                         )}
                                     </div>
                                 </button>
